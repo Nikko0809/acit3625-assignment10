@@ -10,7 +10,8 @@ var catalogRouter = require('./routes/catalog');  //Import routes for "catalog"
 var compression = require('compression')
 var helmet = require('helmet')
 
-var mongo_connect = "mongodb+srv://nikko:HsVj2UR6xzLZwchG@assignment8.dabio.mongodb.net/assignment_8?retryWrites=true&w=majority"
+var dev_db_url = "mongodb+srv://nikko:HsVj2UR6xzLZwchG@assignment8.dabio.mongodb.net/assignment_8?retryWrites=true&w=majority"
+var mongo_connect = process.env.MONGODB_URI || dev_db_url;
 
 var app = express();
 
